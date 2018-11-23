@@ -1,7 +1,61 @@
-/* 改变主题色变量 */
-$--color-primary: teal;
+/* 全局css mixins */
+/* flexBox flex容器(按照标准flex写法做封装) */
+/* justify-content */
+@mixin justifyContent($jc) {
+	@if $jc == 'flex-start' {
+		@extend %flexZStart;
+	}@else if $jc == 'center' {
+        @extend %flexZCenter;
+	}@else if $jc == 'flex-end' {
+        @extend %flexZEnd;
+	}@else if $jc == 'space-between' {
+        @extend %flexZBetween;
+	}
+}
 
-/* 改变 icon 字体路径变量，必需 */
-$--font-path: '~element-ui/lib/theme-chalk/fonts';
+/* align-items */
+@mixin alignItems($ai) {
+	@if $ai == 'center' {
+		@extend %flexCCenter;
+	}@else if $ai == 'flex-start' {
+        @extend %flexCStart;
+	}@else if $ai == 'flex-end' {
+        @extend %flexCEnd;
+	}@else if $ai == 'baseline' {
+        @extend %flexCBaseline;
+	}@else if $ai == 'stretch' {
+        @extend %flexCStretch;
+	}
+}
 
-@import "~element-ui/packages/theme-chalk/src/index";
+/* flex-direction */
+@mixin flexDirection($ai) {
+	@if $ai == 'row' {
+		@extend %flexZLeftRight;
+	}@else if $ai == 'column' {
+        @extend %flexZTopBottom;
+	}@else if $ai == 'row-reverse' {
+        @extend %flexZRightLeft;
+	}@else if $ai == 'column-reverse' {
+        @extend %flexZBottomTop;
+	}
+}
+
+/* flexBox flex容器(按照标准flex写法做封装)
+ * $jc:justify-content
+ * $ai: align-items
+*/
+@mixin flexContainer($jc, $ai) {
+	@extend %displayFlex;
+	@include justifyContent($jc);
+	@include alignItems($ai);
+}
+
+// 兼容圆角
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}

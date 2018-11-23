@@ -41,10 +41,10 @@ module.exports = {
       'lang': resolve('src/lang'),
       'router': resolve('src/router'),
       'services': resolve('src/services'),
+      'store': resolve('src/store'),
       'styles': resolve('src/styles'),
       'utils': resolve('src/utils'),
-      'views': resolve('src/views'),
-      'vuex': resolve('src/vuex')
+      'views': resolve('src/views')
     }
   },
   module: {

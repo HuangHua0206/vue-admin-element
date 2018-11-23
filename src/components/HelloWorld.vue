@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <p>姓：{{demo1}}</p>
+    <p>名：{{demo2}}</p>
+    <button @click="changeFirstname">更换姓</button>
   <el-table
       :data="tableData"
       style="width: 100%">
@@ -24,6 +27,8 @@
 
 <script>
 import { getList } from 'services/test'
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
     data() {
         return {
@@ -40,7 +45,14 @@ export default {
             }
             const reslutData = await getList(o)
             this.tableData = reslutData.data
-        }
+        },
+        changeFirstname() {
+            this.EXCHANGE_LANG_FIRST_NAME('黄')
+        },
+        ...mapMutations(['EXCHANGE_LANG_FIRST_NAME'])
+    },
+    computed: {
+        ...mapGetters(['demo1', 'demo2'])
     }
 }
 </script>

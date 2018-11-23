@@ -1,3 +1,4 @@
+/* 默认样式清除 */
 *{margin: 0;padding: 0;list-style: none;}
 /** 清除内外边距 **/
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
@@ -18,6 +19,7 @@ button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie
 
 /** 重置表格元素 **/
 table { border-collapse: collapse; border-spacing: 0; }
+
 html, body, #app{
 	height:100%;
 }

@@ -1,4 +1,5 @@
-@import 'base.scss';
-@import 'variables.scss';
-@import 'mixins.scss';
-@import 'theme.scss';
+@import 'base.scss'; // 默认样式清除
+@import 'theme.scss'; // Element主题
+@import 'variables.scss'; // 全局变量定义
+@import 'compatible.scss'; // 浏览器兼容
+@import 'mixins.scss'; // 全局mixins
