@@ -9,18 +9,13 @@ const service = axios.create({
   withCredentials: true // 允许添加cookie
 })
 
-// 添加请求拦截器（暂时不需要，先注释）
-// service.interceptors.request.use(function(config) {
-//     return config
-// })
-
 // 添加响应拦截器
-service.interceptors.response.use(function(response) {
-    const { data } = response
+service.interceptors.response.use(res => {
+    const { data } = res
     if (data && !data.result) { // 此处result字段根据接口习惯修改
-    	error(response.data.message) // 此处message字段根据接口习惯修改
+    	error(res.data.message) // 此处message字段根据接口习惯修改
 	}
-	return response.data
+	return res.data
 }, function () { // 此处待完善
     error('请求出错,请联系客服')
 })

@@ -29,14 +29,14 @@
 }
 
 /* flex-direction */
-@mixin flexDirection($ai) {
-	@if $ai == 'row' {
+@mixin flexDirection($fd) {
+	@if $fd == 'row' {
 		@extend %flexZLeftRight;
-	}@else if $ai == 'column' {
+	}@else if $fd == 'column' {
         @extend %flexZTopBottom;
-	}@else if $ai == 'row-reverse' {
+	}@else if $fd == 'row-reverse' {
         @extend %flexZRightLeft;
-	}@else if $ai == 'column-reverse' {
+	}@else if $fd == 'column-reverse' {
         @extend %flexZBottomTop;
 	}
 }
@@ -58,4 +58,23 @@
     -ms-border-radius: $radius;
     -o-border-radius: $radius;
     border-radius: $radius;
+}
+
+// 盒子宽搞
+@mixin wh($w, $h){
+	width: $w;
+	height: $h;
+}
+// 定义元素字体和颜色
+@mixin font($fz, $lh, $color, $fw: normal) {
+	font-size: $fz;
+	line-height: $lh;
+	color: $color;
+	font-weight:$fw;
+}
+// 文本不换行处理
+%ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }

@@ -43,9 +43,13 @@
 <style lang="scss">
 	.drive-left-menus-container{
 		// overflow-x: hidden;
+		min-width: 960px;
 		height: 100%;
 		display: flex;
 		.left-menus{
+			// position: fixed;
+			// top:0;
+			// left:0;
 			padding-top: 24px;
 			min-width: 210px;
 			border-right: solid 1px #e6e6e6;
@@ -63,6 +67,7 @@
 			}
 		}
 		.right-content{
+			height: 100%;
 			flex:1;
 		}
 	}

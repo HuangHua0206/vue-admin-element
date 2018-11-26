@@ -50,12 +50,31 @@
         label="地址">
       </el-table-column>
     </el-table>
+     异步vuex：---------------------------
+    <el-table
+      :data="dataList"
+      style="width: 100%">
+      <el-table-column
+        prop="date"
+        label="日期"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址">
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
 <script>
 import { getList } from 'services/test'
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
     data() {
@@ -69,6 +88,9 @@ export default {
     },
     created() {
         this.getData()
+        this.getTestList({
+                paraone: 'hhjk'
+            })
     },
     methods: {
         async getData() {
@@ -92,10 +114,11 @@ export default {
             this.name = ''
             this.address = ''
         },
-        ...mapMutations(['EXCHANGE_LANG_FIRST_NAME', 'ADD_ITEM'])
+        ...mapMutations(['EXCHANGE_LANG_FIRST_NAME', 'ADD_ITEM']),
+        ...mapActions(['getTestList'])
     },
     computed: {
-        ...mapGetters(['demo1', 'demo2', 'list'])
+        ...mapGetters(['demo1', 'demo2', 'list', 'dataList'])
     }
 }
 </script>

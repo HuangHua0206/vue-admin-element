@@ -1,8 +1,10 @@
 import { 
 	EXCHANGE_LANG_FIRST_NAME,
 	EXCHANGE_LANG_lAST_NAME,
-	ADD_ITEM
+	ADD_ITEM,
+	GET_TEST_LIST
 } from 'store/modules/mutation-types'
+import { getList } from 'services/test'
 
 const module1 = {
 	state: {
@@ -12,7 +14,8 @@ const module1 = {
 			date: '初始化date',
 			name: '初始化name',
 			address: '初始化address'
-		}]
+		}],
+		dataList: []
 	},
 	mutations: {
 		[EXCHANGE_LANG_FIRST_NAME](state, firstname) {
@@ -23,9 +26,17 @@ const module1 = {
 		},
 		[ADD_ITEM](state, item) {
 			state.list = [...state.list, item]
+		},
+		[GET_TEST_LIST](state, data) {
+			state.dataList = [...data]
 		}
 	},
-	actions: {}
+	actions: {
+		async getTestList({ commit, state }, data) {
+			const reslutData = await getList(data)
+            commit('GET_TEST_LIST', reslutData.data)
+		}
+	}
 
 }
 
