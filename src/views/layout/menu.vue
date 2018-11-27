@@ -9,23 +9,28 @@
 				active-text-color="#2e68f8">
 				<el-menu-item index="hello">
 					<i class="el-icon-time"></i>
-					<span slot="title">latest</span>
+					<!-- 最近latest -->
+					<span slot="title">{{$t('menus.latest')}}</span>
 				</el-menu-item>
 				<el-menu-item index="demo" >
 					<i class="el-icon-star-off"></i>
-					<span slot="title">star</span>
+					<!-- 星标star -->
+					<span slot="title">{{$t('menus.star')}}</span>
 				</el-menu-item>
 				<el-menu-item index="files">
 					<i class="el-icon-document"></i>
-					<span slot="title">files</span>
+					<!-- 我的文档files -->
+					<span slot="title">{{$t('menus.files')}}</span>
 				</el-menu-item>
 				<el-menu-item index="share">
 					<i class="el-icon-share"></i>
-					<span slot="title">share</span>
+					<!-- 与我分享share -->
+					<span slot="title">{{$t('menus.share')}}</span>
 				</el-menu-item>
 				<el-menu-item index="share">
 					<i class="el-icon-share"></i>
-					<span slot="title">team</span>
+					<!-- 团队team -->
+					<span slot="title">{{$t('menus.team')}}</span>
 				</el-menu-item>
 			</el-menu>
 		</div>
@@ -37,7 +42,9 @@
 </template>
 <script>
 	export default {
-		name: 'Menu'
+		name: 'Menu',
+		created() {
+		}
 	}
 </script>
 <style lang="scss">
