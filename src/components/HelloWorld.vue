@@ -2,6 +2,12 @@
   <div class="hello">
     <p>姓：{{demo1}}</p>
     <p>名：{{demo2}}</p>
+    <i class="iconfont">&#xe60e;</i>
+    <i class="iconfont">&#xe60e;</i>
+ <i class="icon iconfont">&#xe64c;</i>
+<i class="icon iconfont">&#xe602;</i>
+    <i class="iconfont">&#xe60e;</i>
+    <i class="iconfont">&#xe60e;</i>
     <div class="input-text">
         <el-input v-model="firstname" placeholder="请输入姓氏"></el-input>
         <el-button type="primary" @click="changeFirstname">修改姓氏</el-button> 
@@ -125,6 +131,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 .hello{
   .input-text{
     width: 300px;

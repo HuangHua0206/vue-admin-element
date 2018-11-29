@@ -60,21 +60,43 @@
     border-radius: $radius;
 }
 
-// 盒子宽搞
+// 盒子宽高
 @mixin wh($w, $h){
 	width: $w;
 	height: $h;
 }
+/* 正方形 */
+@mixin square($size){
+	width: $size;
+	height: $size;
+}
 // 定义元素字体和颜色
-@mixin font($fz, $lh, $color, $fw: normal) {
+@mixin font($fz, $lh, $color, $ta: center, $fw: normal) {
 	font-size: $fz;
 	line-height: $lh;
 	color: $color;
+	text-align: $ta;
 	font-weight:$fw;
 }
 // 文本不换行处理
-%ellipsis {
+@mixin ellipsis {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+/*定位*/
+@mixin position($position, $key1, $value1, $key2, $value2, $zIndex: 1){
+	position: $position;
+	#{$key1}: $value1;
+	#{$key2}: $value2;
+	z-index: $zIndex;
+}
+/*全屏*/
+@mixin wholeScreen($zIndex: 1){
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: $zIndex;
 }

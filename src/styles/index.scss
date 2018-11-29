@@ -1,5 +1,13 @@
-@import 'base.scss'; // 默认样式清除
-@import 'theme.scss'; // Element主题
-@import 'variables.scss'; // 全局变量定义
-@import 'compatible.scss'; // 浏览器兼容
-@import 'mixins.scss'; // 全局mixins
+@import './base.scss'; // 默认样式清除
+@import './theme.scss'; // Element主题
+@import './variables.scss'; // 全局变量定义
+@import './compatible.scss'; // 浏览器兼容
+@import './mixins.scss'; // 全局mixins
+
+
+@mixin position($position, $key1, $value1, $key2, $value2, $zIndex: 1){
+	position: $position;
+	#{$key1}: $value1;
+	#{$key2}: $value2;
+	z-index: $zIndex;
+}

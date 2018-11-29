@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import '@/styles/index.scss' // global css
+import 'styles/iconfont/iconfont.css'
 import App from './App'
 import router from './router'
 import i18n from './lang'
-import './styles/index.scss'
 import store from 'store'
 
 Vue.use(ElementUI, { 

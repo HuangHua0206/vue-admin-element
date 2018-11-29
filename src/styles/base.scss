@@ -1,3 +1,84 @@
+/*
+ * iconfont样式声明
+ */
+
+.f-font14 {
+    font-size: 14px;
+}
+
+.f-font15 {
+    font-size: 15px;
+}
+
+.f-font16 {
+    font-size: 16px;
+}
+
+.f-font18 {
+    font-size: 18px;
+}
+
+.f-font20 {
+    font-size: 20px;
+}
+
+.f-mb0 {
+    margin-bottom: 0px !important;
+}
+
+.f-mt0 {
+    margin-top: 0px !important;
+}
+
+.f-mb10 {
+    margin-bottom: 10px !important;
+}
+
+.f-mb50 {
+    margin-bottom: 50px;
+}
+
+.f-mb64 {
+    margin-bottom: 64px;
+}
+
+.f-mb59 {
+    margin-bottom: 59px;
+}
+
+.f-mb48 {
+    margin-bottom: 48px;
+}
+
+.f-mb80 {
+    margin-bottom: 80px;
+}
+
+.f-mb45 {
+    margin-bottom: 45px;
+}
+
+.f-mb70 {
+    margin-bottom: 70px;
+}
+
+.f-mb72 {
+    margin-bottom: 72px;
+}
+
+ 
+
+
+ 
+
+.icon-play:before {
+    content: "\e618";
+}
+
+.icon-stop:before {
+    content: "\e61a";
+}
+
 /* 默认样式清除 */
 *{margin: 0;padding: 0;list-style: none;}
 /** 清除内外边距 **/
