@@ -31,7 +31,10 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       console.log(chalk.red('  Build failed with errors.\n'))
       process.exit(1)
     }
-
+    // 删除json文件
+    rm(path.join(config.build.assetsRoot, 'static/json'), err => {
+      if (err) throw err
+    })
     console.log(chalk.cyan('  Build complete.\n'))
     console.log(chalk.yellow(
       '  Tip: built files are meant to be served over an HTTP server.\n' +
